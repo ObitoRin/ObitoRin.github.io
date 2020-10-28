@@ -16,7 +16,6 @@
         time = 0.1;
         break;
     }
-    console.log(time)
   });
 
   function writeCode(code) {
@@ -28,7 +27,7 @@
     let timer = setTimeout(function run() {
       i += 1;
       style.innerHTML = code.substring(0, i);
-      showCode.innerHTML = code.substring(0, i);
+      showCode.innerHTML = Prism.highlight(code.substring(0, i), Prism.languages.css);
       showCode.scrollTop = showCode.scrollHeight;
       if (i < code.length) {
         timer = setTimeout(run, time);
